@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme {
+  --color-fb-blue: #3b5998;
+  --color-fb-dark: #29447e;
+  --color-fb-mid: #6d84b4;
+  --color-fb-light: #d8dfea;
+  --color-fb-pale: #edeff4;
+  --color-fb-line: #e9e9e9;
+  --color-fb-gray: #808080;
+  --font-fb: "lucida grande", tahoma, verdana, arial, sans-serif;
+}
+
+@layer base {
+:root {
+  color-scheme: light;
+}
+
+html,
+body {
+  background: #fff;
+  color: #333;
+  font-family: var(--font-fb);
+  font-size: 13px;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (min-width: 640px) {
+  html,
+  body {
+    font-size: 11px;
+  }
+}
+
+a {
+  color: var(--color-fb-blue);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+}
+
+/* The classic 2008 "yellow fade" on freshly posted items */
+@keyframes fb-highlight {
+  from {
+    background-color: #fff9d7;
+  }
+  to {
+    background-color: transparent;
+  }
+}
+.fb-new {
+  animation: fb-highlight 2.4s ease-out;
+}
+
+@keyframes fb-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.fb-spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--color-fb-light);
+  border-top-color: var(--color-fb-blue);
+  border-radius: 50%;
+  animation: fb-spin 0.8s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fb-new {
+    animation: none;
+  }
+  .fb-spinner {
+    animation-duration: 2.4s;
+  }
+}
