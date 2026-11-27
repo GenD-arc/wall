@@ -9,6 +9,7 @@ export const profile = {
 };
 
 export const MAX_CHARS = 280;
-export const MAX_PHOTO_BYTES = 5 * 1024 * 1024;
+export const MAX_PHOTO_BYTES = 5 * 1024 * 1024; // after resizing
+export const MAX_PICK_BYTES = 30 * 1024 * 1024; // before resizing
 export const PHOTO_BUCKET = "wall-photos";
 export const ACCEPTED_PHOTO_TYPES = ["image/jpeg", "image/png", "image/gif", "image/webp"];
